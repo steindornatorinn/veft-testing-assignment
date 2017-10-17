@@ -2,6 +2,8 @@
 
 In this project we're going to use the code provided in this repo to write tests using Jest and refactor code that isn't easily testable.
 
+To get started you have all of the packages installed that you will need and you only need to run `yarn test --watch` or `npm test -- --watch` to get your tests running.
+
 #### 1
 Write a test for the function `add`. Your tests should cover at least these three cases
 + add(1, 1)
