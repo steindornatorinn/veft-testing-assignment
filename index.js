@@ -3,6 +3,19 @@ import mongoose, {Schema} from 'mongoose';
 
 /* DO NOT REFACTOR THIS CODE */
 export const add = (a, b) => a + b;
+
+export const throws = n => {
+  throw new Error('You need to mock me');
+  return n;
+};
+
+export const loop = n => {
+  let sum = 0;
+  for (let i = 0; i < n; i++) {
+    sum += add(n, n - 1);
+  }
+  return sum;
+};
 /* DO NOT REFACTOR THIS CODE */
 
 /* SERVER CODE TO REFACTOR */
