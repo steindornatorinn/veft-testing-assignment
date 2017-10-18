@@ -1,11 +1,12 @@
 import express from 'express';
 import mongoose, {Schema} from 'mongoose';
+import errorFunction from './errorFunction';
 
 /* DO NOT REFACTOR THIS CODE */
 export const add = (a, b) => a + b;
 
 export const throws = n => {
-  throw new Error('You need to mock me');
+  errorFunction();
   return n;
 };
 
