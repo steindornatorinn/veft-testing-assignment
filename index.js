@@ -27,7 +27,7 @@ export const employeeSchema = Schema({
 });
 
 mongoose
-  .connect('mongodb://<yourDatabaseUrlHere>/veft-testing', {
+  .connect('mongodb://localhost:27017/veft-testing', {
     useMongoClient: true,
   })
   .then(db => {
@@ -36,6 +36,6 @@ mongoose
     app.get('/', (req, res) => {
       Employee.find({}).exec((err, data) => res.json({data}));
     });
-    app.listen(3000, () => console.log('Server running on port 3000'));
+    app.listen(27017, () => console.log('Server running on port 27017'));
   });
 /* SERVER CODE TO REFACTOR */
