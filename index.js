@@ -31,11 +31,7 @@ mongoose
     useMongoClient: true,
   })
   .then(db => {
-    const Employee = db.model('Employee', employeeSchema);
-    const app = express();
-    app.get('/', (req, res) => {
-      Employee.find({}).exec((err, data) => res.json({data}));
-    });
-    app.listen(27017, () => console.log('Server running on port 27017'));
+    const server = app(db);
+    server.listen(27017, () => console.log('Server running on port 27017'));
   });
 /* SERVER CODE TO REFACTOR */

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "express": "4.16.2",
+    "mongodb-memory-server": "^1.6.1",
     "mongoose": "4.12.3"
   },
   "devDependencies": {
