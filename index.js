@@ -1,6 +1,8 @@
 import express from 'express';
 import mongoose, {Schema} from 'mongoose';
 import errorFunction from './errorFunction';
+import app from './app';
+
 
 /* DO NOT REFACTOR THIS CODE */
 export const add = (a, b) => a + b;
