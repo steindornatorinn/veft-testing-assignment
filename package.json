@@ -11,7 +11,8 @@
   "dependencies": {
     "express": "4.16.2",
     "mongodb-memory-server": "^1.6.1",
-    "mongoose": "4.12.3"
+    "mongoose": "4.12.3",
+    "request": "^2.83.0"
   },
   "devDependencies": {
     "babel-core": "6.26.0",
