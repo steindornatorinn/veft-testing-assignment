@@ -5,7 +5,7 @@ import app from './app';
 
 
 /* DO NOT REFACTOR THIS CODE */
-export const add = (a, b) => a + b;
+/*export const add = (a, b) => a + b;
 
 export const throws = n => {
   errorFunction();
@@ -18,16 +18,19 @@ export const loop = n => {
     sum += add(n, n - 1);
   }
   return sum;
-};
+};*/
 /* DO NOT REFACTOR THIS CODE */
 
 /* SERVER CODE TO REFACTOR */
+
+// Skipta tessu ut fyrir rabbitmq
 mongoose.Promise = global.Promise;
 export const employeeSchema = Schema({
   name: String,
   jobTitles: {type: [String]},
 });
 
+//skipta tessu lika ut fyrir rabbit mq, sleppa mongo alveg
 mongoose
   .connect('mongodb://localhost:27017/veft-testing', {
     useMongoClient: true,

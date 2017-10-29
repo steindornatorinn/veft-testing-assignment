@@ -1,4 +1,5 @@
 
+/*
 import {add, throws} from './index';
 import errorFunction from './errorFunction';
 import * as indexModule from './index';
@@ -55,3 +56,4 @@ describe('#### 3', () => {
   });
 
 });
+*/
