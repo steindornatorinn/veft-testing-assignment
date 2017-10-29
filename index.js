@@ -1,6 +1,6 @@
 import express from 'express';
-import mongoose, {Schema} from 'mongoose';
-import errorFunction from './errorFunction';
+//import mongoose, {Schema} from 'mongoose';
+//import errorFunction from './errorFunction';
 import app from './app';
 
 
@@ -24,19 +24,21 @@ export const loop = n => {
 /* SERVER CODE TO REFACTOR */
 
 // Skipta tessu ut fyrir rabbitmq
-mongoose.Promise = global.Promise;
+/*mongoose.Promise = global.Promise;
 export const employeeSchema = Schema({
   name: String,
   jobTitles: {type: [String]},
-});
+});*/
 
 //skipta tessu lika ut fyrir rabbit mq, sleppa mongo alveg
-mongoose
+/*mongoose
   .connect('mongodb://localhost:27017/veft-testing', {
     useMongoClient: true,
-  })
+}
   .then(db => {
+    */
+    var db = null;
     const server = app(db);
     server.listen(27017, () => console.log('Server running on port 27017'));
-  });
+//  });
 /* SERVER CODE TO REFACTOR */

@@ -1,17 +1,13 @@
 import express from 'express';
-import mongoose, {Schema} from 'mongoose';
-import employeeSchema from './index';
+//import mongoose, {Schema} from 'mongoose';
+//import employeeSchema from './index';
 import app from './app';
+import bodyParser from 'body-parser';
+app.use(bodyParser.json());
 
-export default db =>{
-  /*const employeeSchema = Schema({
-    name: String,
-    jobTitles: {type: [String]},
-  });
-  const Employee = db.model('Employee', employeeSchema);*/
+export default mq =>{
+  // Something needs to happen with the MQ here
   const app = express();
-  app.get('/', (req, res) => {
-    Employee.find({}).exec((err, data) => res.json({data}));
-  });
+  app.post()
   return app;
 }
