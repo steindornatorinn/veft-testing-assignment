@@ -2,7 +2,12 @@ import express from 'express';
 //import mongoose, {Schema} from 'mongoose';
 //import errorFunction from './errorFunction';
 import app from './app';
+import createProducer from './producer';
 
+// Creates two producers
+// We should probably rename these channels doe
+const userProducer = createProducer('consumer');
+const punchProducer = createProducer('punchProducer');
 
 /* DO NOT REFACTOR THIS CODE */
 /*export const add = (a, b) => a + b;
@@ -37,8 +42,10 @@ export const employeeSchema = Schema({
 }
   .then(db => {
     */
-    var db = null;
-    const server = app(db);
+
+// Creates a app if the channels were successfully created
+Promise.all([userProducer, punchProducer])
+  .then(([userMq, punchMq]) => {
+    const server = app(userMq, punchMq);
     server.listen(27017, () => console.log('Server running on port 27017'));
-//  });
-/* SERVER CODE TO REFACTOR */
+});

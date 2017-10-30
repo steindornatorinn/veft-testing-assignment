@@ -6,9 +6,11 @@
   "license": "MIT",
   "scripts": {
     "start": "babel-watch index.js --presets env",
-    "test": "jest"
+    "test": "jest",
+    "testerino": "babel-watch consumer.js --presets env"
   },
   "dependencies": {
+    "amqplib": "0.5.1",
     "express": "4.16.2",
     "mongodb-memory-server": "^1.6.1",
     "mongoose": "4.12.3",

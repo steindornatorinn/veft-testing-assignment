@@ -3,11 +3,14 @@ import express from 'express';
 //import employeeSchema from './index';
 import app from './app';
 import bodyParser from 'body-parser';
-app.use(bodyParser.json());
 
-export default mq =>{
-  // Something needs to happen with the MQ here
+export default (userMq, punchMq) =>{
   const app = express();
-  app.post()
+  app.use(bodyParser.json());
+  // Writes garbage out when a post is successful
+  app.post('/api/users', function(req, res){
+    userMq.sendToQueue("consumer", new Buffer("Your favorite anime"));
+    res.status(200);
+  });
   return app;
 }

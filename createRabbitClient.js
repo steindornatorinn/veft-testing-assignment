@@ -1,5 +1,6 @@
 import amqplib from 'amqplib';
 
+// Creates a rabbitmq client
 export default () => 
   new Promise((resolve, reject) => {
     amqplib
